@@ -15,7 +15,7 @@
   cursor: pointer;
 }
 
-.photo img,
+.photo > div,
 .photo span {
   grid-area: 1 / 1;
 }
