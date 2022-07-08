@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { USER_POST } from '../../api'
 import Error from '../../Helper/Error'
+import Head from '../../Helper/Head'
 import useFetch from '../../Hooks/useFetch'
 import useForm from '../../Hooks/useForm'
 import { UserContext } from '../../UserContext'
@@ -10,7 +11,7 @@ import Input from '../Forms/Input'
 const LoginCreate = () => {
   const username = useForm()
   const email = useForm('email')
-  const password = useForm('password')
+  const password = useForm()
 
   const { userLogin } = useContext(UserContext)
   const { loading, error, request } = useFetch()
@@ -28,6 +29,7 @@ const LoginCreate = () => {
 
   return (
     <section className="animeLeft">
+      <Head title="Crie sua conta" />
       <h1 className="title">Cadastre-se</h1>
       <form onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username" {...username} />
